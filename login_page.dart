@@ -159,7 +159,10 @@ class _DatosState extends State<Datos> {
           SizedBox(height: 10),
           GestureDetector(
             onTap: () {
-              print("¿Olvidaste tu contraseña?");
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ForgotPasswordPage()),
+              );
             },
             child: Text(
               '¿Olvidaste tu contraseña?',
@@ -266,6 +269,20 @@ class _BotonesState extends State<Botones> {
             ],
           ),
         ],
+      ),
+    );
+  }
+}
+
+class ForgotPasswordPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Recuperar Contraseña'),
+      ),
+      body: Center(
+        child: Text('Página para recuperar contraseña'),
       ),
     );
   }
